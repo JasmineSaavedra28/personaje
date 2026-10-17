@@ -41,6 +41,8 @@ npm run preview
 5. Al derrotar a un enemigo avanzas de nivel y ganas monedas.
 6. Si pierdes, puedes pagar la mitad de tus monedas para continuar en el mismo nivel con media vida y recursos. Sin monedas, puedes reiniciar la aventura.
 
+En pantallas pequeñas, los botones de combate permanecen fijos en la parte inferior para facilitar el uso táctil.
+
 ## Estructura del proyecto
 
 ```text

@@ -199,21 +199,23 @@ export const gameTemplate = `
                     </div>
                 </div>
 
-                <div class="action-row">
-                    <button class="action-button primary-action" type="button" data-action="attack">
-                        <span>⚔</span> Atacar
-                    </button>
-                    <button class="action-button secondary-action" type="button" data-action="skill">
-                        <span>✧</span> Usar habilidad
-                    </button>
-                    <button class="action-button recover-action" type="button" data-action="recover">
-                        <span>◉</span> Concentrarse
+                <div class="combat-controls">
+                    <div class="action-row">
+                        <button class="action-button primary-action" type="button" data-action="attack">
+                            <span>⚔</span> Atacar
+                        </button>
+                        <button class="action-button secondary-action" type="button" data-action="skill">
+                            <span>✧</span> Usar habilidad
+                        </button>
+                        <button class="action-button recover-action" type="button" data-action="recover">
+                            <span>◉</span> Concentrarse
+                        </button>
+                    </div>
+                    <button class="action-button awakening-action" type="button" data-action="aura-skill" disabled>
+                        <span id="awakening-icon" aria-hidden="true"></span>
+                        <span id="awakening-label">Despertar de papel · 0 / 100 aura</span>
                     </button>
                 </div>
-                <button class="action-button awakening-action" type="button" data-action="aura-skill" disabled>
-                    <span id="awakening-icon" aria-hidden="true"></span>
-                    <span id="awakening-label">Despertar de papel · 0 / 100 aura</span>
-                </button>
             </article>
 
             <div class="loadout-column">
