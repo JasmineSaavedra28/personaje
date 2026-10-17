@@ -50,10 +50,44 @@ npm run preview
 ├── style.css           # Estilos, ilustraciones de collage y animaciones.
 ├── src/
 │   ├── catalog.ts      # Catálogos de armas, habilidades y héroes.
-│   ├── domain.ts       # Clases Arma, Habilidad, Personaje y Maniqui.
-│   └── template.ts     # Estructura HTML de las pantallas.
+│   ├── template.ts     # Estructura HTML de las pantallas.
+│   └── domain/
+│       ├── Arma.ts      # Armas: daño, energía y apariencia.
+│       ├── Habilidad.ts # Habilidades: poder, maná y apariencia.
+│       ├── Maniqui.ts   # Objetivo de práctica y su progresión.
+│       ├── Personaje.ts # Héroe, recursos y equipo agregado.
+│       ├── types.ts     # Tipos de configuración y resultados.
+│       └── index.ts     # Exportaciones para importar el dominio.
 ├── package.json        # Dependencias y comandos del proyecto.
 └── tsconfig.json       # Configuración estricta de TypeScript.
+```
+
+Las clases del dominio están separadas por responsabilidad. Para usarlas desde otros módulos del proyecto, importa desde `src/domain`, que las exporta desde un solo lugar:
+
+```ts
+import { Arma, Habilidad, Personaje } from "./src/domain";
+```
+
+Los tipos de configuración se pueden importar por separado:
+
+```ts
+import type { DatosArma, DatosPersonaje } from "./src/domain";
+```
+
+Para agregar un arma nueva, crea una instancia con un objeto de propiedades nombradas y añádela al catálogo:
+
+```ts
+import { Arma } from "./src/domain";
+import { armas } from "./src/catalog";
+
+const nuevaEspada = new Arma({
+    nombre: "Espada de papel",
+    danio: 28,
+    costoEnergia: 18,
+    forma: "sword",
+});
+
+armas.push(nuevaEspada);
 ```
 
 ## Tecnologías
